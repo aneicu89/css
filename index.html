@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>CSS Transition</title>
+		<script type="text/javascript" src="http://hldm.ro/js/jquery-2.1.1.min.js"></script>
+		<style>
+		body{
+			padding:50px;
+		}
+		
+		.trigger{
+			width:200px;
+			height:200px;
+			border:20px solid #999;
+			background:#ddd;
+		}
+		
+		.box{
+			display:inline-block;
+			background:pink;
+			width:200px;
+			height:200px;
+			transition:transform 300ms ease-in-out;
+			pointer-eents:none;
+		}
+		
+		.trigger.clicked .box{
+			transform:translate(200px, 150px) rotate(20deg);
+		}
+		</style>
+	</head>
+	<body>	
+		<div class="trigger">
+			<div class="box"></div>
+		</div>
+		<script>
+		$('.trigger').on('click', function(){
+			$(this).toggleClass('clicked');
+		});
+		</script>
+	</body>
+</html>
